@@ -1,0 +1,16 @@
+classDiagram
+    class ItemFS {
+        <<interface>>
+        +calcularTamanho() long
+    }
+    class Arquivo {
+        +calcularTamanho() long
+    }
+    class Pasta {
+        -filhos List~ItemFS~
+        +adicionar(item)
+        +calcularTamanho() long
+    }
+    ItemFS <|.. Arquivo
+    ItemFS <|.. Pasta
+    Pasta o--> "*" ItemFS

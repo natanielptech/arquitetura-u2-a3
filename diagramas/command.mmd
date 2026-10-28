@@ -1,0 +1,22 @@
+classDiagram
+    class Comando {
+        <<interface>>
+        +executar()
+        +desfazer()
+    }
+    class CriarPedidoCmd
+    class CancelarPedidoCmd
+    class Invocador {
+        -historico List~Comando~
+        +executar(c)
+        +desfazerUltimo()
+    }
+    class PedidoService {
+        +criar()
+        +cancelar()
+    }
+    Comando <|.. CriarPedidoCmd
+    Comando <|.. CancelarPedidoCmd
+    Invocador o--> "*" Comando
+    CriarPedidoCmd --> PedidoService
+    CancelarPedidoCmd --> PedidoService

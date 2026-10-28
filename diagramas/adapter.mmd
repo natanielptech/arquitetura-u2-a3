@@ -1,0 +1,16 @@
+classDiagram
+    class CalculadoraFrete {
+        <<interface>>
+        +calcular(pedido) Money
+    }
+    class AdaptadorFreteExterno {
+        -lib LibFreteExterna
+        +calcular(pedido) Money
+    }
+    class LibFreteExterna {
+        +cotar(cepOrigem, cepDestino, peso) double
+    }
+    class PedidoService
+    PedidoService --> CalculadoraFrete
+    CalculadoraFrete <|.. AdaptadorFreteExterno
+    AdaptadorFreteExterno --> LibFreteExterna

@@ -1,0 +1,14 @@
+classDiagram
+    class PedidoFacade {
+        +finalizarPedido(pedido)
+    }
+    class Validador
+    class CalculadoraFrete
+    class Estoque
+    class Cobranca
+    class Cliente
+    Cliente --> PedidoFacade
+    PedidoFacade --> Validador
+    PedidoFacade --> CalculadoraFrete
+    PedidoFacade --> Estoque
+    PedidoFacade --> Cobranca

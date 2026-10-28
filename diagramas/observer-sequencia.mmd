@@ -1,0 +1,7 @@
+sequenceDiagram
+    participant Pedido as Pedido (Sujeito)
+    participant Email as NotificacaoEmail
+    participant Painel as PainelLogistico
+    Pedido->>Pedido: mudarStatus(Enviado)
+    Pedido->>Email: atualizar(pedido)
+    Pedido->>Painel: atualizar(pedido)

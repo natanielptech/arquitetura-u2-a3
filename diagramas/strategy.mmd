@@ -1,0 +1,16 @@
+classDiagram
+    class EstrategiaFrete {
+        <<interface>>
+        +calcular(pedido) Money
+    }
+    class FreteExpresso
+    class FreteEconomico
+    class FreteRetirada
+    class Checkout {
+        -estrategia EstrategiaFrete
+        +finalizar(pedido)
+    }
+    EstrategiaFrete <|.. FreteExpresso
+    EstrategiaFrete <|.. FreteEconomico
+    EstrategiaFrete <|.. FreteRetirada
+    Checkout --> EstrategiaFrete : injetada

@@ -1,0 +1,26 @@
+classDiagram
+    class FabricaTema {
+        <<interface>>
+        +criarBotao() Botao
+        +criarCaixaTexto() CaixaTexto
+        +criarMenu() Menu
+    }
+    class FabricaClaro
+    class FabricaEscuro
+    class Botao {
+        <<interface>>
+    }
+    class CaixaTexto {
+        <<interface>>
+    }
+    class Menu {
+        <<interface>>
+    }
+    FabricaTema <|.. FabricaClaro
+    FabricaTema <|.. FabricaEscuro
+    FabricaClaro ..> Botao
+    FabricaClaro ..> CaixaTexto
+    FabricaClaro ..> Menu
+    FabricaEscuro ..> Botao
+    FabricaEscuro ..> CaixaTexto
+    FabricaEscuro ..> Menu
