@@ -1,0 +1,18 @@
+classDiagram
+    class Notificador {
+        <<interface>>
+        +enviar(msg)
+    }
+    class NotificadorBase
+    class NotificadorDecorator {
+        <<abstract>>
+        -envolvido Notificador
+        +enviar(msg)
+    }
+    class EmailDecorator
+    class SmsDecorator
+    Notificador <|.. NotificadorBase
+    Notificador <|.. NotificadorDecorator
+    NotificadorDecorator o--> Notificador
+    NotificadorDecorator <|-- EmailDecorator
+    NotificadorDecorator <|-- SmsDecorator

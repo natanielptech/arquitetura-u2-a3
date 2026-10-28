@@ -1,0 +1,16 @@
+classDiagram
+    class ImportadorDados {
+        <<abstract>>
+        +importar()
+        #abrirArquivo()
+        #lerRegistros()*
+        #validar()*
+        #salvar()
+        #fecharArquivo()
+    }
+    class ImportadorCsv
+    class ImportadorXml
+    class ImportadorJson
+    ImportadorDados <|-- ImportadorCsv
+    ImportadorDados <|-- ImportadorXml
+    ImportadorDados <|-- ImportadorJson

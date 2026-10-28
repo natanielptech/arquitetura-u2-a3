@@ -1,0 +1,19 @@
+classDiagram
+    class Pedido {
+        -observadores List~Observador~
+        +registrar(o)
+        +remover(o)
+        +mudarStatus(s)
+        -notificar()
+    }
+    class Observador {
+        <<interface>>
+        +atualizar(pedido)
+    }
+    class NotificacaoEmail
+    class PainelLogistico
+    class FaturamentoService
+    Pedido o--> "*" Observador
+    Observador <|.. NotificacaoEmail
+    Observador <|.. PainelLogistico
+    Observador <|.. FaturamentoService

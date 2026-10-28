@@ -1,0 +1,13 @@
+classDiagram
+    class ProdutoBuilder {
+        +definirCor(cor) ProdutoBuilder
+        +definirTamanho(t) ProdutoBuilder
+        +adicionarAcessorio(a) ProdutoBuilder
+        +construir() Produto
+    }
+    class Produto {
+        -cor
+        -tamanho
+        -acessorios
+    }
+    ProdutoBuilder ..> Produto : constroi

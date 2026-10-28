@@ -1,0 +1,19 @@
+classDiagram
+    class Logistica {
+        <<abstract>>
+        +planejarEntrega()
+        +criarTransporte()* Transporte
+    }
+    class LogisticaRodoviaria
+    class LogisticaAerea
+    class Transporte {
+        <<interface>>
+        +entregar()
+    }
+    class Caminhao
+    class Aviao
+    Logistica <|-- LogisticaRodoviaria
+    Logistica <|-- LogisticaAerea
+    Transporte <|.. Caminhao
+    Transporte <|.. Aviao
+    Logistica ..> Transporte
